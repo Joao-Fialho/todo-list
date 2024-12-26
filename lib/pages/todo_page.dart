@@ -4,6 +4,7 @@ import 'package:todo_list/components/app_bar.dart';
 import 'package:todo_list/components/bottom_bar_custom.dart';
 import 'package:todo_list/components/task_card.dart';
 import 'package:todo_list/controllers/task_cotroller.dart';
+import 'package:todo_list/models/bottom_states.dart';
 
 class TodoPage extends StatefulWidget {
   const TodoPage({super.key});
@@ -89,6 +90,8 @@ class _TodoPageState extends State<TodoPage> {
             ],
           ),
         ),
-        bottomNavigationBar: const BottomBarCustom());
+        bottomNavigationBar: BottomBarCustom(
+          selectedScreen: Telas.Todo,
+        ));
   }
 }
