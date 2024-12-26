@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.4
+  sdk: 3.6.0	
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -67,7 +67,7 @@ flutter:
     - assets/icons/search-icon.png
     - assets/icons/checked-icon.png
     - assets/icons/check-appbar.png
-    - assets/fonts/OpenSans-SemiBold.ttf
+    - assets/google_fonts/
     - assets/images/perfil.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
