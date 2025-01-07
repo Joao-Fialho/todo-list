@@ -1,13 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:todo_list/models/bottom_states.dart';
+import 'package:todo_list/pages/create_modal.dart';
 
 class BottomBarCustom extends StatefulWidget {
-  Telas selectedScreen;
-  BottomBarCustom({
-    Key? key,
+  final Telas selectedScreen;
+  const BottomBarCustom({
+    super.key,
     required this.selectedScreen,
-  }) : super(key: key);
+  });
 
   @override
   State<BottomBarCustom> createState() => _BottomBarCustomState();
@@ -48,27 +49,37 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
                   )
                 ],
               )),
-          SizedBox(
-              height: 50,
-              width: 50,
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/icons/plus-icon.png',
-                  ),
-                  const SizedBox(
-                    height: 2,
-                  ),
-                  const Text(
-                    'Create',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      fontSize: 14,
-                      color: Color(0xffC6CFDC),
+          InkWell(
+            onTap: () {
+              showModalBottomSheet<void>(
+                context: context,
+                builder: (BuildContext context) {
+                  return CreateModal();
+                },
+              );
+            },
+            child: SizedBox(
+                height: 50,
+                width: 50,
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/icons/plus-icon.png',
                     ),
-                  )
-                ],
-              )),
+                    const SizedBox(
+                      height: 2,
+                    ),
+                    const Text(
+                      'Create',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 14,
+                        color: Color(0xffC6CFDC),
+                      ),
+                    )
+                  ],
+                )),
+          ),
           SizedBox(
               height: 50,
               width: 50,
